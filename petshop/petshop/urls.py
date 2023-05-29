@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from petshopapp.api import viewsets as petshopappviewsets
-from petshopapp.api import viewsets
+
 
 route = routers.DefaultRouter()
 route.register(r'cadastro', petshopappviewsets.CadastroViewSet,
@@ -32,8 +32,4 @@ route.register(r'servicos', petshopappviewsets.ServicosViewSet,
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(route.urls))
-]
-urlpatterns = [
-    path('login/', viewsets.login, name='login'),
-    path('visualizar-itens/', viewsets.visualizar_itens, name='visualizar_itens'),
 ]

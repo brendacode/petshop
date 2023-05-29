@@ -15,17 +15,3 @@ class ProdutosViewSet(viewsets.ModelViewSet):
 class ServicosViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ServicosSerializer
     queryset = models.Servicos.objects.all()
-    
-    
-def login(request):
-    
-    if request.user.is_authenticated:
-        return redirect('visualizar_itens')
-
-    if request.method == 'POST':
-        return redirect('visualizar_itens')
-
-    return render(request, 'login.html')
-
-def visualizar_itens(request):
-    return render(request, 'visualizar_itens.html')
